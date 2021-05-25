@@ -114,12 +114,18 @@ namespace App
 
       // 7
       Console.WriteLine("--- Find the avg grade for all Sophomores ---");
-
+      var sophomoreAvgGrade = 0.00;
+      var numCourses = 0;
       foreach (var student in students)
       {
-
+        if (student.Classification == CollegeClassification.Sophomore)
+        {
+          student.Grades.ToList().ForEach(grade => sophomoreAvgGrade += grade.CourseGrade);
+          numCourses += student.Grades.ToList().Count;
+        }
       }
-
+      sophomoreAvgGrade /= numCourses;
+      Console.WriteLine($"Average Grade of all sophomores: {sophomoreAvgGrade}");
     }
   }
 }
