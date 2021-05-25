@@ -2,9 +2,9 @@ namespace App
 {
   public class Grade
   {
-    int Id;
-    int StudentId;
-    string CourseName;
-    float Grade;
+    public int Id { get; set; }
+    public int StudentId { get; set; }
+    public string CourseName { get; set; }
+    public double CourseGrade { get; set; }
   }
 }
